@@ -36,10 +36,12 @@ namespace FilmesApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CinemaDTO cinemaDto)
+        public async Task<IActionResult> PostAsync([FromBody] CinemaDTO cinemaDto)
         {
-            _cinemaService.Add(cinemaDto);
-            return CreatedAtAction(nameof(cinemaDto), cinemaDto);
+            var cinema = _mapper.Map<Cinema>(cinemaDto);
+            await _cinemaService.AddAsync(cinema);
+            return Ok(cinema);
+
         }
 
         [HttpPut("{id}")]

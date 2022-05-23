@@ -14,7 +14,7 @@ namespace FilmesApi.Repositorios
         public GerenteRepository(ApplicationContext context)
         {
             _context = context;
-            _gerentes = context.Gerentes;
+            _gerentes = context.gerentes;
         }
 
         public async Task AddAsync(Gerente gerente)

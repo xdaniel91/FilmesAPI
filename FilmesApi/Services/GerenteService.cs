@@ -17,9 +17,8 @@ namespace FilmesApi.Services
             _mapper = mapper;
         }
 
-        public async Task AddAsync(GerenteDTO gerenteDto)
+        public async Task AddAsync(Gerente gerente)
         {
-            var gerente = _mapper.Map<Gerente>(gerenteDto);
             await _gerenteRepository.AddAsync(gerente);
         }
 

@@ -17,9 +17,8 @@ namespace FilmesApi.Services
 
         }
 
-        public void Add(EnderecoDTO enderecoDto)
+        public void Add(Endereco endereco)
         {
-            var endereco = _mapper.Map<Endereco>(enderecoDto);
             _enderecoRepository.AddAsync(endereco);
         }
 

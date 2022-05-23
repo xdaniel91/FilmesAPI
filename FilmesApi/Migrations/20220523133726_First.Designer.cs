@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FilmesApi.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220519185803_second")]
-    partial class second
+    [Migration("20220523133726_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,11 @@ namespace FilmesApi.Migrations
                     b.Property<int>("EnderecoId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("GerenteId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -42,7 +46,9 @@ namespace FilmesApi.Migrations
                     b.HasIndex("EnderecoId")
                         .IsUnique();
 
-                    b.ToTable("Cinemas");
+                    b.HasIndex("GerenteId");
+
+                    b.ToTable("cinemas");
                 });
 
             modelBuilder.Entity("FilmesApi.Models.Endereco", b =>
@@ -64,7 +70,7 @@ namespace FilmesApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Enderecos");
+                    b.ToTable("enderecos");
                 });
 
             modelBuilder.Entity("FilmesApi.Models.Filme", b =>
@@ -91,7 +97,23 @@ namespace FilmesApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Filmes");
+                    b.ToTable("filmes");
+                });
+
+            modelBuilder.Entity("FilmesApi.Models.Gerente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("gerentes");
                 });
 
             modelBuilder.Entity("FilmesApi.Models.Cinema", b =>
@@ -102,12 +124,25 @@ namespace FilmesApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FilmesApi.Models.Gerente", "Gerente")
+                        .WithMany("Cinemas")
+                        .HasForeignKey("GerenteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Endereco");
+
+                    b.Navigation("Gerente");
                 });
 
             modelBuilder.Entity("FilmesApi.Models.Endereco", b =>
                 {
                     b.Navigation("Cinema");
+                });
+
+            modelBuilder.Entity("FilmesApi.Models.Gerente", b =>
+                {
+                    b.Navigation("Cinemas");
                 });
 #pragma warning restore 612, 618
         }

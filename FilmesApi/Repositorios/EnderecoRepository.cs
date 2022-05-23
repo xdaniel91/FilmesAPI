@@ -13,7 +13,7 @@ namespace FilmesApi.Repositorios
         public EnderecoRepository(ApplicationContext context)
         {
             _context = context;
-            _enderecos = _context.Enderecos;
+            _enderecos = _context.enderecos;
         }
 
         public async Task AddAsync(Endereco endereco)

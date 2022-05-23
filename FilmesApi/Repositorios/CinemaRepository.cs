@@ -13,7 +13,7 @@ namespace FilmesApi.Repositorios
         public CinemaRepository(ApplicationContext context)
         {
             _context = context;
-            _cinemas = _context.Cinemas;
+            _cinemas = _context.cinemas;
         }
 
         public async Task AddAsync(Cinema cinema)

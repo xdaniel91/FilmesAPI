@@ -16,10 +16,10 @@ namespace FilmesApi.Services
             _mapper = mapper;
         }
 
-        public void Add(CinemaDTO cinemaDto )
+        public async Task AddAsync(Cinema cinema)
         {
-            var cinema = _mapper.Map<Cinema>(cinemaDto);
-            _cinemaRepository.AddAsync(cinema);
+            await _cinemaRepository.AddAsync(cinema);
+
         }
 
         public void DeleteById(int id)

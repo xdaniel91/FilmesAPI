@@ -23,8 +23,7 @@ namespace FilmesApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
-            var gerentes = await _gerenteService.GetAll();
-            var gerentesDto = _mapper.Map<GerenteDTO>(gerentes);
+            var gerentesDto = await _gerenteService.GetAll();
             return Ok(gerentesDto);
         }
 
@@ -39,8 +38,9 @@ namespace FilmesApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAsync([FromBody] GerenteDTO gerenteDto)
         {
-            await _gerenteService.AddAsync(gerenteDto);
-            return CreatedAtAction(nameof(gerenteDto), gerenteDto);
+            var gerente = _mapper.Map<Gerente>(gerenteDto);
+            await _gerenteService.AddAsync(gerente); ;
+            return Ok(gerente);
         }
 
         [HttpPut("{id}")]

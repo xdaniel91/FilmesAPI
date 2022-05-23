@@ -38,8 +38,10 @@ namespace FilmesApi.Controllers
         [HttpPost]
         public IActionResult Add([FromBody] EnderecoDTO enderecoDto)
         {
-            _enderecoService.Add(enderecoDto);
-            return Ok(enderecoDto);
+  
+            var endereco = _mapper.Map<Endereco>(enderecoDto);
+            _enderecoService.Add(endereco);
+            return Ok(endereco);
         }
 
         [HttpPatch("{id}")]

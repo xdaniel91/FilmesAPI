@@ -15,17 +15,10 @@ namespace FilmesApi.Models
         public string Genero { get; set; }
         [Range(1, 400)]
         public int DuracaoMinutos { get; set; }
+        public virtual List<Sessao> Sessoes { get; set; }
 
         protected Filme()
         {
-        }
-
-        public Filme(string diretor, string titulo, string genero, int duracao)
-        {
-            Diretor = diretor;
-            Titulo = titulo;
-            Genero = genero;
-            DuracaoMinutos = duracao;
         }
 
 

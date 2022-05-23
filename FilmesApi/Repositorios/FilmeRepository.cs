@@ -16,38 +16,38 @@ namespace FilmesApi.Repositorios
 
         public async Task AddAsync(Filme filme)
         {
-            _ = await _context.Filmes.AddAsync(filme);
+            _ = await _context.filmes.AddAsync(filme);
             _context.SaveChanges();
         }
 
         public void Delete(Filme filme)
         {
-            _context.Filmes.Remove(filme);
+            _context.filmes.Remove(filme);
             _context.SaveChanges();
         }
 
         public async Task DeleteByIdAsync(int id)
         {
             var filme = await GetByIdAsync(id);
-            _context.Filmes.Remove(filme);
+            _context.filmes.Remove(filme);
             _context.SaveChanges();
         }
 
         public async Task<Filme> GetByIdAsync(int id)
         {
-            var result = await _context.Filmes.FirstOrDefaultAsync(filme => filme.Id == id);
+            var result = await _context.filmes.FirstOrDefaultAsync(filme => filme.Id == id);
             return result;
         }
 
         public async Task<IEnumerable<Filme>> GetAll()
         {
-            var filmes = await _context.Filmes.ToListAsync();
+            var filmes = await _context.filmes.ToListAsync();
             return filmes;
         }
 
         public void Update(Filme filme)
         {
-            _context.Filmes.Update(filme);
+            _context.filmes.Update(filme);
             _context.SaveChanges();
         }
     }
