@@ -36,12 +36,7 @@ namespace FilmesApi.Services
         public async Task<List<GerenteDTO>> GetAll()
         {
             var gerentes = await _gerenteRepository.GetAll();
-            var gerentesDto = new List<GerenteDTO>();
-            foreach (var gerente in gerentes)
-            {
-                var gerenteDto = _mapper.Map<GerenteDTO>(gerente);
-                gerentesDto.Add(gerenteDto);
-            }
+            var gerentesDto = _mapper.Map<List<GerenteDTO>>(gerentes);
             return gerentesDto;
         }
 

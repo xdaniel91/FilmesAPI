@@ -80,6 +80,9 @@ namespace FilmesApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Classificacao")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Diretor")
                         .IsRequired()
                         .HasColumnType("text");

@@ -3,7 +3,7 @@ using FilmesApi.Interfaces;
 using FilmesApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FilmesApi.Repository
+namespace FilmesApi.Repositorios
 {
     public class SessaoRepository : ISessaoRepository
     {
@@ -19,17 +19,20 @@ namespace FilmesApi.Repository
         public async Task AddAsync(Sessao sessao)
         {
             await _sessoes.AddAsync(sessao);
+            await _context.SaveChangesAsync();
         }
 
         public void Delete(Sessao sessao)
         {
             _sessoes.Remove(sessao);
+            _context.SaveChanges();
         }
 
         public async Task DeleteByIdAsync(int id)
         {
             var sessao = await _sessoes.FirstOrDefaultAsync(sessao => sessao.Id == id);
             _sessoes.Remove(sessao);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Sessao>> GetAll()
@@ -47,6 +50,7 @@ namespace FilmesApi.Repository
         public void Update(Sessao sessao)
         {
             _sessoes.Update(sessao);
+            _context.SaveChanges();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace FilmesApi.Controllers
     public class FilmeController : ControllerBase
     {
 
-
         private readonly IFilmeService _filmeService;
         private readonly IMapper _mapper;
 
@@ -24,16 +23,22 @@ namespace FilmesApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddAsync([FromBody] FilmeDTO filmeDto)
         {
-           await _filmeService.AddAsync(filmeDto);
-            return Ok(filmeDto);
-
+            var filme = _mapper.Map<Filme>(filmeDto);
+            await _filmeService.AddAsync(filme);
+            return Ok(filme);
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> Get([FromQuery] int? classificacao = null)
         {
-            var filmes = _filmeService.GetAllAsync();
-            return Ok(filmes);
+            if (classificacao == null)
+            {
+                var filmes = await _filmeService.GetAllAsync();
+                return Ok(filmes);
+            }
+            var filmesClassificacao = await _filmeService.GeyByClassificacao(classificacao);
+            if (filmesClassificacao.Count > 0) return Ok(filmesClassificacao);
+            return NotFound();
         }
 
         [HttpGet("{id}")]

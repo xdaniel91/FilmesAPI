@@ -16,7 +16,7 @@ namespace FilmesApi.Repositorios
 
         public async Task AddAsync(Filme filme)
         {
-            _ = await _context.filmes.AddAsync(filme);
+            await _context.filmes.AddAsync(filme);
             _context.SaveChanges();
         }
 
@@ -49,6 +49,12 @@ namespace FilmesApi.Repositorios
         {
             _context.filmes.Update(filme);
             _context.SaveChanges();
+        }
+
+        public async Task<List<Filme>> GetByClassificacao(int? idade)
+        {
+            var filmes = await _context.filmes.Where(filme => filme.Classificacao <= idade).ToListAsync();
+            return filmes;
         }
     }
 }

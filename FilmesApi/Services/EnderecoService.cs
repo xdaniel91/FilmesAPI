@@ -30,12 +30,7 @@ namespace FilmesApi.Services
         public async Task<List<EnderecoDTO>> GetAll()
         {
             var enderecos = await _enderecoRepository.GetAllAsync();
-            var enderecosDto = new List<EnderecoDTO>();
-            foreach (var endereco in enderecos)
-            {
-                var enderecoDto = _mapper.Map<EnderecoDTO>(endereco);
-                enderecosDto.Add(enderecoDto);
-            }
+            var enderecosDto = _mapper.Map<List<EnderecoDTO>>(enderecos);
             return enderecosDto;
         }
 

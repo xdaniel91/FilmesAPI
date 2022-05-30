@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using FilmesApi.Data.DTO;
-using FilmesApi.Data.FilmeContext;
 using FilmesApi.Interfaces;
 using FilmesApi.Models;
 
@@ -36,12 +35,7 @@ namespace FilmesApi.Services
         public async Task<List<SessaoDTO>> GetAll()
         {
             var _sessoes = await _sessaoRepository.GetAll();
-            var sessoes = new List<SessaoDTO>();
-            foreach (var sessao in _sessoes)
-            {
-                var sessaoDto = _mapper.Map<SessaoDTO>(sessao);
-                sessoes.Add(sessaoDto);
-            }
+            var sessoes = _mapper.Map<List<SessaoDTO>>(_sessoes);
             return sessoes;
         }
 

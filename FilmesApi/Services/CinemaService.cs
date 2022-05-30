@@ -30,12 +30,7 @@ namespace FilmesApi.Services
         public async Task<List<CinemaDTO>> GetAllAsync()
         {
             var cinemas = await _cinemaRepository.GetAllAsync();
-            var cinemasDto = new List<CinemaDTO>();
-            foreach (var cinema in cinemas)
-            {
-                var cinemaDto = _mapper.Map<CinemaDTO>(cinema);
-                cinemasDto.Add(cinemaDto);
-            }
+            var cinemasDto = _mapper.Map<List<CinemaDTO>>(cinemas);
             return cinemasDto;
         }
 

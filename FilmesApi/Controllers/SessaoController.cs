@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FilmesApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class SessaoController : ControllerBase
     {
@@ -22,40 +22,40 @@ namespace FilmesApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<SessaoDTO>> GetAllAsync()
-        {
+        public async Task<IActionResult> GetAllAsync()
+        { 
             var sessoes = await _sessaoService.GetAll();
-            return sessoes;
+            return Ok(sessoes);
         }
 
-
         [HttpGet("{id}")]
-        public async Task<SessaoDTO> GetByIdAsync(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
             var sessaoDto = await _sessaoService.GetByIdAsync(id);
-            return sessaoDto;
+            return Ok(sessaoDto);
         }
 
         [HttpPost]
-        public void Add([FromBody] SessaoDTO sessaoDto)
+        public async Task<IActionResult> Add([FromBody] SessaoDTO sessaoDto)
         {
             var sessao = _mapper.Map<Sessao>(sessaoDto);
-            _sessaoService.AddAsync(sessao);
+            await _sessaoService.AddAsync(sessao);
+            return Ok(sessao);
         }
 
-
         [HttpPut("{id}")]
-        public void Update(int id, [FromBody] SessaoDTO sessaoDto)
+        public IActionResult Update(int id, [FromBody] SessaoDTO sessaoDto)
         {
             sessaoDto.Id = id;
             _sessaoService.Update(sessaoDto);
+            return Ok(sessaoDto);
         }
 
-
         [HttpDelete("{id}")]
-        public async Task DeleteAsync(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
             await _sessaoService.DeleteByIdAsync(id);
+            return NoContent();
         }
     }
 }

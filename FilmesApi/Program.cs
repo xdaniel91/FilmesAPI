@@ -1,5 +1,3 @@
-using AutoMapper;
-using FilmesApi.Data.FilmeContext;
 using FilmesApi.Interfaces;
 using FilmesApi.Repositorios;
 using FilmesApi.Services;
@@ -19,7 +17,9 @@ builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
 builder.Services.AddScoped<IEnderecoService, EnderecoService>();
 builder.Services.AddScoped<IGerenteRepository, GerenteRepository>();
 builder.Services.AddScoped<IGerenteService, GerenteService>();
-//builder.Services.AddScoped<IMapper, Mapper>();
+builder.Services.AddScoped<ISessaoRepository, SessaoRepository>();
+builder.Services.AddScoped<ISessaoService, SessaoService>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

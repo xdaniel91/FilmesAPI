@@ -16,7 +16,7 @@ namespace FilmesApi.Services
             _mapper = mapper;
         }
 
-        public async Task AddAsync(FilmeDTO filme)
+        public async Task AddAsync(Filme filme)
         {
             await _repository.AddAsync(filme);
         }
@@ -30,12 +30,7 @@ namespace FilmesApi.Services
         public async Task<List<FilmeDTO>> GetAllAsync()
         {
             var filmes = await _repository.GetAll();
-            var filmesDto = new List<FilmeDTO>();
-            foreach (var filme in filmes)
-            {
-                var filmeDto = _mapper.Map<FilmeDTO>(filme);
-                filmesDto.Add(filmeDto);
-            }
+            var filmesDto = _mapper.Map<List<FilmeDTO>>(filmes);
             return filmesDto;
         }
 
@@ -44,6 +39,13 @@ namespace FilmesApi.Services
             var filme = await _repository.GetByIdAsync(id);
             var filmeDto = _mapper.Map<FilmeDTO>(filme);
             return filmeDto;
+        }
+
+        public async Task<List<FilmeDTO>> GeyByClassificacao(int? idade)
+        {
+            var filmes = await _repository.GetByClassificacao(idade);
+            var filmesDto = _mapper.Map<List<FilmeDTO>>(filmes);
+            return filmesDto;
         }
 
         public void Remove(FilmeDTO filmeDto)

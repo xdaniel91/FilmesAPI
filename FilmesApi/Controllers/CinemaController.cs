@@ -20,9 +20,17 @@ namespace FilmesApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync([FromQuery] string nomeFilme)
         {
             var cinemas = await _cinemaService.GetAllAsync();
+            if (cinemas == null) return NotFound();
+            if (!string.IsNullOrEmpty(nomeFilme))
+            {
+                var query = from cinema in cinemas
+                            where cinema.Sessoes.Any(sessao => sessao.Filme.Titulo == nomeFilme)
+                            select cinema;
+                cinemas = query.ToList();
+            }
             return Ok(cinemas);
         }
 
@@ -36,7 +44,7 @@ namespace FilmesApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody] CinemaDTO cinemaDto)
+        public async Task<IActionResult> AddAsync([FromBody] CinemaDTO cinemaDto)
         {
             var cinema = _mapper.Map<Cinema>(cinemaDto);
             await _cinemaService.AddAsync(cinema);
