@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using UsuariosApi.Dto;
 using UsuariosApi.Interfaces;
-using UsuariosApi.Services;
+using UsuariosApi.Requests;
 
 namespace UsuariosApi.Controller
 {
@@ -26,7 +26,7 @@ namespace UsuariosApi.Controller
         }
 
         [HttpPost("/ativacao")]
-        public async Task<IActionResult> AtivarUsuario(AtivaContaRequest request)
+        public IActionResult AtivarUsuario(AtivaContaRequest request)
         {
             var result = _service.AtivarConta(request);
             if (result.IsCompletedSuccessfully) return Ok();

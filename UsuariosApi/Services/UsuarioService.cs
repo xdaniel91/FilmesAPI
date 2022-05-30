@@ -13,11 +13,13 @@ namespace UsuariosApi.Services
     {
         private readonly IMapper _mapper;
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IEmailService _emailService;
 
-        public UsuarioService(IMapper mapper, IUsuarioRepository usuarioRepository)
+        public UsuarioService(IMapper mapper, IUsuarioRepository usuarioRepository, IEmailService emailService)
         {
             _mapper = mapper;
             _usuarioRepository = usuarioRepository;
+            _emailService = emailService;
         }
 
         public async Task<Result> AtivarConta(AtivaContaRequest request)
