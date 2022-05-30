@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UsuariosApi.Dto;
 using UsuariosApi.Interfaces;
 using UsuariosApi.Models;
+using UsuariosApi.Requests;
 
 namespace UsuariosApi.Services
 {

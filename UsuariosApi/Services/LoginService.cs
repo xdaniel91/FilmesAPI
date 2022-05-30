@@ -2,14 +2,13 @@
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using UsuariosApi.Interfaces;
+using UsuariosApi.Requests;
 
 namespace UsuariosApi.Services
 {
     public class LoginService : ILoginService
     {
-        private SignInManager<IdentityUser<int>> _signManager;
-        private TokenService _tokenService;
-
+        private readonly SignInManager<IdentityUser<int>> _signManager;
         public LoginService(SignInManager<IdentityUser<int>> signManager)
         {
             _signManager = signManager;

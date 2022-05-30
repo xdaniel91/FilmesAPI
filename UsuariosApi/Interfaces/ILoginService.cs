@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using System.Threading.Tasks;
-using UsuariosApi.Services;
+using UsuariosApi.Requests;
 
 namespace UsuariosApi.Interfaces
 {

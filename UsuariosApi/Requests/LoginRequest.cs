@@ -1,4 +1,4 @@
-﻿namespace UsuariosApi.Services
+﻿namespace UsuariosApi.Requests
 {
     public class LoginRequest
     {
