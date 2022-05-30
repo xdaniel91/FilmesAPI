@@ -8,7 +8,6 @@ namespace UsuariosApi.Data.Context
     {
         public UsuarioDbContext(DbContextOptions<UsuarioDbContext> opt) : base(opt)
         {
-
         }
     }
 }

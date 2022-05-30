@@ -1,5 +1,4 @@
 ﻿using FilmesApi.Models;
-using System.Text.Json.Serialization;
 
 namespace FilmesApi.Data.DTO
 {
@@ -11,6 +10,6 @@ namespace FilmesApi.Data.DTO
         public int FilmeId { get; set; }
         public int CinemaId { get; set; }
         public DateTime HorarioEncerramento { get; set; }
-        public DateTime HorarioInicio{ get; set; }
+        public DateTime HorarioInicio { get; set; }
     }
 }

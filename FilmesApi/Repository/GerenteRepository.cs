@@ -7,7 +7,6 @@ namespace FilmesApi.Repositorios
 {
     public class GerenteRepository : IGerenteRepository
     {
-
         private readonly ApplicationContext _context;
         private readonly DbSet<Gerente> _gerentes;
 
@@ -36,7 +35,6 @@ namespace FilmesApi.Repositorios
                 var gerente = await _gerentes.FindAsync(id);
                 _gerentes.Remove(gerente);
                 _context.SaveChanges();
-
             }
             catch (Exception) { throw; }
         }

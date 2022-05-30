@@ -4,6 +4,5 @@
     {
         public string CodigoAtivacao { get; set; }
         public int UsuarioId { get; set; }
-
     }
 }

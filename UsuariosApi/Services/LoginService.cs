@@ -7,8 +7,8 @@ namespace UsuariosApi.Services
 {
     public class LoginService : ILoginService
     {
-        private  SignInManager<IdentityUser<int>> _signManager;
-        private  TokenService _tokenService;
+        private SignInManager<IdentityUser<int>> _signManager;
+        private TokenService _tokenService;
 
         public LoginService(SignInManager<IdentityUser<int>> signManager)
         {
@@ -19,10 +19,9 @@ namespace UsuariosApi.Services
         {
             var result = await _signManager.PasswordSignInAsync(request.Username, request.Senha, false, false);
             if (result.Succeeded)
-            
+
                 return Result.Ok();
-            
-               
+
             return Result.Fail("não foi possivel fazer login");
         }
     }

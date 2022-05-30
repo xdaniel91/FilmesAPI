@@ -17,7 +17,6 @@ namespace FilmesApi.Data.FilmeContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.Entity<Endereco>()
                 .HasOne(end => end.Cinema)
                 .WithOne(cin => cin.Endereco)
@@ -26,7 +25,6 @@ namespace FilmesApi.Data.FilmeContext
              * my entity Endereco have one Cinema
              * my one Cinema have just one Endereco
              * that my foreignkey is in Cinema on EnderecoId property */
-
 
             modelBuilder.Entity<Cinema>()
                 .HasOne(cin => cin.Gerente)
@@ -38,7 +36,7 @@ namespace FilmesApi.Data.FilmeContext
              * my entity cinema
             * have one gerente
             * my one gerente have many cinemas
-            * that foreignkey is "gerenteId" inside cinema 
+            * that foreignkey is "gerenteId" inside cinema
             * on delete restrict */
 
             modelBuilder.Entity<Sessao>()
@@ -55,8 +53,6 @@ namespace FilmesApi.Data.FilmeContext
              * my entity sessao have one filme/cinema
              * my one cinema/filme have many sessions
              * that foreignkey is filme_id/cinema_id inside session class */
-
-
         }
     }
 }

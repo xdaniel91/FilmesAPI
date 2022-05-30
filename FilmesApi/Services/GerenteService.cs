@@ -7,7 +7,6 @@ namespace FilmesApi.Services
 {
     public class GerenteService : IGerenteService
     {
-
         private readonly IGerenteRepository _gerenteRepository;
         private readonly IMapper _mapper;
 

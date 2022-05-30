@@ -13,7 +13,6 @@ namespace UsuariosApi.Services
         private readonly IMapper _mapper;
         private readonly IUsuarioRepository _usuarioRepository;
 
-
         public UsuarioService(IMapper mapper, IUsuarioRepository usuarioRepository)
         {
             _mapper = mapper;
@@ -25,7 +24,7 @@ namespace UsuariosApi.Services
             var id = request.UsuarioId;
             var codigoAtivacao = request.CodigoAtivacao;
             var identityUser = await _usuarioRepository.GetUser(id);
-            var identityResult =  _usuarioRepository.ConfirmEmailAsync(identityUser, codigoAtivacao).Result;
+            var identityResult = _usuarioRepository.ConfirmEmailAsync(identityUser, codigoAtivacao).Result;
             if (identityResult.Succeeded) return Result.Ok();
             return Result.Fail("falha ao ativar conta de usuário");
         }
@@ -40,11 +39,8 @@ namespace UsuariosApi.Services
             {
                 var code = await _usuarioRepository.GerarTokenConfirmacaoEmail(usuarioIdentity);
                 return Result.Ok().WithSuccess(code);
-            } 
+            }
             return Result.Fail("cadastro falhou");
         }
-
-        
-
     }
 }

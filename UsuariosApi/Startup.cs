@@ -30,7 +30,7 @@ namespace UsuariosApi
             .UseLazyLoadingProxies()
             .UseNpgsql(Configuration
             .GetConnectionString("UsuarioConnection")));
-         
+
             /* configuração do identity*/
             services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(
                 opt => opt.SignIn.RequireConfirmedEmail = true)

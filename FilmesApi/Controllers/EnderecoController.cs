@@ -38,7 +38,6 @@ namespace FilmesApi.Controllers
         [HttpPost]
         public IActionResult Add([FromBody] EnderecoDTO enderecoDto)
         {
-  
             var endereco = _mapper.Map<Endereco>(enderecoDto);
             _enderecoService.Add(endereco);
             return Ok(endereco);
@@ -58,6 +57,5 @@ namespace FilmesApi.Controllers
             _enderecoService.DeleteById(id);
             return Ok();
         }
-
     }
 }

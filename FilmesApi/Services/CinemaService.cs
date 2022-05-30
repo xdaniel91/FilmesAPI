@@ -19,7 +19,6 @@ namespace FilmesApi.Services
         public async Task AddAsync(Cinema cinema)
         {
             await _cinemaRepository.AddAsync(cinema);
-
         }
 
         public void DeleteById(int id)

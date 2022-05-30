@@ -49,7 +49,6 @@ namespace FilmesApi.Controllers
             var cinema = _mapper.Map<Cinema>(cinemaDto);
             await _cinemaService.AddAsync(cinema);
             return Ok(cinema);
-
         }
 
         [HttpPut("{id}")]

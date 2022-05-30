@@ -1,5 +1,4 @@
 ﻿using FilmesApi.Models;
-using System.Text.Json.Serialization;
 
 namespace FilmesApi.Data.DTO
 {

@@ -24,7 +24,6 @@ namespace FilmesApi.Services
         public void DeleteById(int id)
         {
             _repository.DeleteByIdAsync(id);
-
         }
 
         public async Task<List<FilmeDTO>> GetAllAsync()

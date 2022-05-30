@@ -23,7 +23,7 @@ namespace FilmesApi.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
-        { 
+        {
             var sessoes = await _sessaoService.GetAll();
             return Ok(sessoes);
         }

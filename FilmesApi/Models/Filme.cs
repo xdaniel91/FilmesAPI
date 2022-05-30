@@ -13,9 +13,12 @@ namespace FilmesApi.Models
 
         [Required(ErrorMessage = "Titulo is required")]
         public string Titulo { get; set; }
+
         public string Genero { get; set; }
+
         [Range(1, 400)]
         public int DuracaoMinutos { get; set; }
+
         [JsonIgnore]
         public virtual List<Sessao> Sessoes { get; set; }
 

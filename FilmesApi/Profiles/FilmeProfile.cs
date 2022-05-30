@@ -11,6 +11,5 @@ namespace FilmesApi.Profiles
             CreateMap<FilmeDTO, Filme>();
             CreateMap<Filme, FilmeDTO>();
         }
-        
     }
 }

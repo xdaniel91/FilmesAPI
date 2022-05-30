@@ -7,9 +7,9 @@ namespace FilmesApi.Repositorios
 {
     public class EnderecoRepository : IEnderecoRepository
     {
-
         private readonly ApplicationContext _context;
         private readonly DbSet<Endereco> _enderecos;
+
         public EnderecoRepository(ApplicationContext context)
         {
             _context = context;
@@ -31,7 +31,7 @@ namespace FilmesApi.Repositorios
 
         public async Task<IEnumerable<Endereco>> GetAllAsync()
         {
-            var enderecos = await _enderecos.ToListAsync(); 
+            var enderecos = await _enderecos.ToListAsync();
             return enderecos;
         }
 

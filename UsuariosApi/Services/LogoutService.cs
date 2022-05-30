@@ -1,7 +1,5 @@
 ﻿using FluentResults;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Threading.Tasks;
 
 namespace UsuariosApi
 {

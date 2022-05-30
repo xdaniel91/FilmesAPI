@@ -24,7 +24,7 @@ namespace UsuariosApi.Services
                 signingCredentials: credenciais,
                 expires: System.DateTime.UtcNow.AddHours(10));
 
-                var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
             var myToken = new Token(tokenString);
             return myToken;

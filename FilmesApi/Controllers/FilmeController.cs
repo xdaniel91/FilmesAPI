@@ -10,7 +10,6 @@ namespace FilmesApi.Controllers
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-
         private readonly IFilmeService _filmeService;
         private readonly IMapper _mapper;
 
