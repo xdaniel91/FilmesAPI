@@ -42,6 +42,7 @@ namespace UsuariosApi
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<ILogoutService, LogoutService>();
+            services.AddScoped<IEmailService, EmailService>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }

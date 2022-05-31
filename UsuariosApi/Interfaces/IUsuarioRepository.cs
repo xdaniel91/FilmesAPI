@@ -12,6 +12,6 @@ namespace UsuariosApi.Interfaces
 
         public Task<IdentityUser<int>> GetUser(int id);
 
-        public Task<IdentityResult> ConfirmEmailAsync(IdentityUser<int> user, string codigoAtivacao);
+        public IdentityResult ConfirmEmail(IdentityUser<int> user, string codigoAtivacao);
     }
 }

@@ -15,9 +15,9 @@ namespace UsuariosApi.Repositorios
             _userManager = userManager;
         }
 
-        public async Task<IdentityResult> ConfirmEmailAsync(IdentityUser<int> user, string codigoAtivacao)
+        public IdentityResult ConfirmEmail(IdentityUser<int> user, string codigoAtivacao)
         {
-            var result = await _userManager.ConfirmEmailAsync(user, codigoAtivacao);
+            var result = _userManager.ConfirmEmailAsync(user, codigoAtivacao).Result;
             return result;
         }
 

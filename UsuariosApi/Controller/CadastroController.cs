@@ -25,8 +25,8 @@ namespace UsuariosApi.Controller
             return Ok(result.Successes[^1].Message);
         }
 
-        [HttpPost("/ativacao")]
-        public IActionResult AtivarUsuario(AtivaContaRequest request)
+        [HttpGet("/ativacao")]
+        public IActionResult AtivarUsuario([FromQuery] AtivaContaRequest request)
         {
             var result = _service.AtivarConta(request);
             if (result.IsCompletedSuccessfully) return Ok();

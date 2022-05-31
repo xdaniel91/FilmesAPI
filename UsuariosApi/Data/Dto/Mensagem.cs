@@ -15,7 +15,7 @@ namespace UsuariosApi.Data.Dto
             Destinatario = new List<MailboxAddress>();
             Destinatario.AddRange(destinatarios.Select(d => new MailboxAddress(d, d))) ;
             Assunto = assunto;
-            Conteudo = $"https://localhost:7079/ativacao?{userId}&CodigoAtivacao={codigoAtivacao}";
+            Conteudo = $"https://localhost:44303/ativacao?UsuarioId={userId}&CodigoAtivacao={codigoAtivacao}";
 
         }
 

@@ -2,6 +2,7 @@
 using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using System.Web;
 using UsuariosApi.Dto;
 using UsuariosApi.Interfaces;
 using UsuariosApi.Models;
@@ -27,7 +28,7 @@ namespace UsuariosApi.Services
             var id = request.UsuarioId;
             var codigoAtivacao = request.CodigoAtivacao;
             var identityUser = await _usuarioRepository.GetUser(id);
-            var identityResult = _usuarioRepository.ConfirmEmailAsync(identityUser, codigoAtivacao).Result;
+            var identityResult = _usuarioRepository.ConfirmEmail(identityUser, codigoAtivacao);
             if (identityResult.Succeeded) return Result.Ok();
             return Result.Fail("falha ao ativar conta de usuário");
         }
@@ -41,7 +42,13 @@ namespace UsuariosApi.Services
             if (result.IsSuccess)
             {
                 var code = await _usuarioRepository.GerarTokenConfirmacaoEmail(usuarioIdentity);
-                return Result.Ok().WithSuccess(code);
+                var encodedCode = HttpUtility.UrlEncode(code);
+                var email = usuarioIdentity.Email;
+                var id = usuarioIdentity.Id;
+                var usuarios = new string[] { email };
+                var assunto = "LinkAtivacao";
+                _emailService.EnviarEmail(usuarios, assunto, id, encodedCode);
+                return Result.Ok().WithSuccess(encodedCode);
             }
             return Result.Fail("cadastro falhou");
         }
