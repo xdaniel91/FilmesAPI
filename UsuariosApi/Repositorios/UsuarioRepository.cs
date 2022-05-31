@@ -39,5 +39,17 @@ namespace UsuariosApi.Repositorios
             var user = await _userManager.Users.FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
+
+        public async Task<IdentityUser<int>> GetAny()
+        {
+            var user = await _userManager.Users.FirstAsync();
+            return user;
+        }
+
+        public async Task<IdentityUser<int>> GetByEmail(string email)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(user => user.Email == email);
+            return user;
+        }
     }
 }

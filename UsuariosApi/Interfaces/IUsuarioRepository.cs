@@ -13,5 +13,8 @@ namespace UsuariosApi.Interfaces
         public Task<IdentityUser<int>> GetUser(int id);
 
         public IdentityResult ConfirmEmail(IdentityUser<int> user, string codigoAtivacao);
+
+        public Task<IdentityUser<int>> GetAny();
+        public Task<IdentityUser<int>>GetByEmail(string email);
     }
 }
