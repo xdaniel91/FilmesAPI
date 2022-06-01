@@ -1,6 +1,7 @@
 ﻿using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 using UsuariosApi.Interfaces;
 using UsuariosApi.Requests;
@@ -10,18 +11,34 @@ namespace UsuariosApi.Services
     public class LoginService : ILoginService
     {
         private readonly SignInManager<IdentityUser<int>> _signManager;
-        public LoginService(SignInManager<IdentityUser<int>> signManager)
+        private readonly ITokenService _tokenService;
+        public LoginService(SignInManager<IdentityUser<int>> signManager, ITokenService tokenService)
         {
             _signManager = signManager;
+            _tokenService = tokenService;
         }
 
         public async Task<Result> LoginUsuarioAsync(LoginRequest request)
         {
             var result = await _signManager.PasswordSignInAsync(request.Username, request.Senha, false, false);
             if (result.Succeeded)
+            {
+                var identityUser = await _signManager
+                    .UserManager
+                    .Users
+                    .FirstOrDefaultAsync(
+                    user => user.NormalizedUserName == request.Username.ToUpper());
 
-                return Result.Ok();
+                var roles = await _signManager
+                    .UserManager
+                    .GetRolesAsync(identityUser);
 
+                var userRole = roles.FirstOrDefault();
+
+                var token = _tokenService.CreateToken(identityUser, userRole);
+
+                return Result.Ok().WithSuccess(token.Value);
+            }
             return Result.Fail("não foi possivel fazer login");
         }
 
@@ -30,7 +47,10 @@ namespace UsuariosApi.Services
             var user = await _signManager
                 .UserManager
                 .Users
-                .FirstOrDefaultAsync(user => user.NormalizedEmail == request.NormalizedEmail || user.NormalizedEmail == request.Email.ToUpper() || user.Email == request.Email);
+                .FirstOrDefaultAsync(
+                user => user.NormalizedEmail == request.NormalizedEmail ||
+                user.NormalizedEmail == request.Email.ToUpper() ||
+                user.Email == request.Email);
 
             if (user != null)
             {

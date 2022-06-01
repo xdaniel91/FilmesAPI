@@ -2,6 +2,7 @@
 using FilmesApi.Data.DTO;
 using FilmesApi.Interfaces;
 using FilmesApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FilmesApi.Controllers
@@ -20,6 +21,7 @@ namespace FilmesApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> AddAsync([FromBody] FilmeDTO filmeDto)
         {
             var filme = _mapper.Map<Filme>(filmeDto);
@@ -32,7 +34,7 @@ namespace FilmesApi.Controllers
         {
             if (classificacao == null)
             {
-                var filmes = await _filmeService.GetAllAsync();
+                var filmes =  _filmeService.GetAllAsync();
                 return Ok(filmes);
             }
             var filmesClassificacao = await _filmeService.GeyByClassificacao(classificacao);

@@ -32,8 +32,10 @@ namespace UsuariosApi
             .GetConnectionString("UsuarioConnection")));
 
             /* configuração do identity*/
-            services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(
-                opt => opt.SignIn.RequireConfirmedEmail = true)
+            services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(opt =>
+            {
+                opt.SignIn.RequireConfirmedEmail = true;
+            })
                 .AddEntityFrameworkStores<UsuarioDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -43,6 +45,7 @@ namespace UsuariosApi
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<ILogoutService, LogoutService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }

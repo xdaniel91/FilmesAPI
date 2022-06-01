@@ -8,7 +8,7 @@ namespace FilmesApi.Interfaces
 
         public void Update(Filme filme);
 
-        public Task<IEnumerable<Filme>> GetAll();
+        public Task<List<Filme>> GetAll();
 
         public Task<Filme> GetByIdAsync(int id);
 

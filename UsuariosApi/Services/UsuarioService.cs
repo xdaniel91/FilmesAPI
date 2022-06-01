@@ -39,6 +39,7 @@ namespace UsuariosApi.Services
             var usuarioIdentity = _mapper.Map<IdentityUser<int>>(usuario);
             var senha = usuarioDto.Senha;
             var result = await _usuarioRepository.CreateAsync(usuarioIdentity, senha);
+
             if (result.IsSuccess)
             {
                 var code = await _usuarioRepository.GerarTokenConfirmacaoEmail(usuarioIdentity);

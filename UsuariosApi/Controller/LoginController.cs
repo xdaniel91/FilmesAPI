@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 using UsuariosApi.Interfaces;
 using UsuariosApi.Requests;
@@ -25,7 +24,7 @@ namespace UsuariosApi.Controller
         public async Task<IActionResult> LoginUsuarioAsync(LoginRequest request)
         {
             var result = await _loginService.LoginUsuarioAsync(request);
-            if (result.IsSuccess) return Ok();
+            if (result.IsSuccess) return Ok(result.Successes[^1]);
             return BadRequest(result);
         }
 

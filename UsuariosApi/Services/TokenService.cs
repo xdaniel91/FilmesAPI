@@ -10,12 +10,13 @@ namespace UsuariosApi.Services
 {
     public class TokenService : ITokenService
     {
-        public Token CreateToken(IdentityUser<int> identityUser)
+        public Token CreateToken(IdentityUser<int> identityUser, string role)
         {
             var direitosUsuario = new Claim[]
                 {
                     new Claim("username", identityUser.UserName),
-                    new Claim("Id", identityUser.Id.ToString())
+                    new Claim("Id", identityUser.Id.ToString()),
+                    new Claim(ClaimTypes.Role, role)
                 };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("clMAY6M6a7e3MDmW79RB"));
             var credenciais = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

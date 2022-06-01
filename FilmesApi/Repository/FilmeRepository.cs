@@ -39,7 +39,7 @@ namespace FilmesApi.Repositorios
             return result;
         }
 
-        public async Task<IEnumerable<Filme>> GetAll()
+        public async Task<List<Filme>> GetAll()
         {
             var filmes = await _context.filmes.ToListAsync();
             return filmes;
