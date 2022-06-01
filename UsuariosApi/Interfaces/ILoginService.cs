@@ -8,5 +8,6 @@ namespace UsuariosApi.Interfaces
     {
         public Task<Result> LoginUsuarioAsync(LoginRequest request);
         public Task<Result> SolicitaResetSenha(ResetSenhaRequest request);
+        public Task<Result> EfetuaReset(EfetuaResetRequest request);
     }
 }

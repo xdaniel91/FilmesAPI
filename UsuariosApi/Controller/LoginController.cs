@@ -40,7 +40,7 @@ namespace UsuariosApi.Controller
         [HttpPost("/efetua-reset")]
         public async Task<IActionResult> ResetaSenha(EfetuaResetRequest request)
         {
-            var result = await _loginService.SolicitaResetSenha(request);
+            var result = await _loginService.EfetuaReset(request);
             if (result.IsSuccess) return Ok(result.Successes[^1]);
             return BadRequest();
         }
