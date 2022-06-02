@@ -51,11 +51,13 @@ C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\obj\Debug\net5.
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\MailKit.dll
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\MimeKit.dll
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\BouncyCastle.Crypto.dll
-C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\obj\Debug\net5.0\UsuariosApi.csproj.AssemblyReference.cache
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\obj\Debug\net5.0\UsuariosApi.Properties.Resources.resources
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\obj\Debug\net5.0\UsuariosApi.csproj.GenerateResource.cache
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\obj\Debug\net5.0\UsuariosApi.csproj.AssemblyReference.cache
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

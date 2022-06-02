@@ -2,6 +2,8 @@
 using FilmesApi.Data.DTO;
 using FilmesApi.Interfaces;
 using FilmesApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Services
 {

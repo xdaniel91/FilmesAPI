@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -41,8 +41,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -54,33 +54,43 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
               "version": "[6.0.5, )"
             },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[5.0.17, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[5.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
             }
           },
           "imports": [
@@ -93,6 +103,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.16, 5.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

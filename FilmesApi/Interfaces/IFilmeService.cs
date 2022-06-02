@@ -1,5 +1,7 @@
 ﻿using FilmesApi.Data.DTO;
 using FilmesApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Interfaces
 {

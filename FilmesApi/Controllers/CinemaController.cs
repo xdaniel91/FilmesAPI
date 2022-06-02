@@ -3,6 +3,8 @@ using FilmesApi.Data.DTO;
 using FilmesApi.Interfaces;
 using FilmesApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Controllers
 {

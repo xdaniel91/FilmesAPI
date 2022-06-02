@@ -1,4 +1,5 @@
 ﻿using FilmesApi.Models;
+using System.Collections.Generic;
 
 namespace FilmesApi.Data.DTO
 {
