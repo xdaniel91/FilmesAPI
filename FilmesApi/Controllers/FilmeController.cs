@@ -2,7 +2,9 @@
 using FilmesApi.Data.DTO;
 using FilmesApi.Interfaces;
 using FilmesApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Controllers
 {
@@ -18,7 +20,8 @@ namespace FilmesApi.Controllers
             _filmeService = service;
             _mapper = mapper;
         }
-
+      
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public async Task<IActionResult> AddAsync([FromBody] FilmeDTO filmeDto)
         {
@@ -27,6 +30,7 @@ namespace FilmesApi.Controllers
             return Ok(filme);
         }
 
+        [Authorize(Roles = "admin, regular", Policy = "IdadeMinima")]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] int? classificacao = null)
         {
@@ -40,6 +44,7 @@ namespace FilmesApi.Controllers
             return NotFound();
         }
 
+        [Authorize(Roles = "admin, regular")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -48,6 +53,7 @@ namespace FilmesApi.Controllers
             return NotFound();
         }
 
+        [Authorize(Roles = "admin, regular")]
         [HttpPatch("{id}")]
         public IActionResult Update(int id, [FromBody] FilmeDTO filmeDto)
         {
@@ -57,6 +63,7 @@ namespace FilmesApi.Controllers
             return Ok(filme);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

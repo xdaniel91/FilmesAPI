@@ -1,5 +1,7 @@
 ﻿using FilmesApi.Data.DTO;
 using FilmesApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Interfaces
 {
@@ -15,8 +17,7 @@ namespace FilmesApi.Interfaces
 
         public Task<List<FilmeDTO>> GeyByClassificacao(int? idade);
 
-        public Task<List<FilmeDTO>> GetAllAsync();
-
+        Task<List<FilmeDTO>> GetAllAsync();
         public void DeleteById(int id);
     }
 }

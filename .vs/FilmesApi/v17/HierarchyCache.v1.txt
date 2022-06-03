@@ -3,11 +3,11 @@ i:{00000000-0000-0000-0000-000000000000}:FilmesApi.sln
 ++FilmesApi
 i:{00000000-0000-0000-0000-000000000000}:FilmesApi
 ++Connected Services 
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>504
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>501
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>544
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>542
 ++Dependências
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>502
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>500
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>541
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>540
 ++Properties
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\properties\
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\properties\
@@ -37,10 +37,10 @@ i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\re
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\appsettings.json
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\appsettings.json
 ++Program.cs
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\program.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\program.cs
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\program.cs
 ++Nenhuma dependência de serviço descoberta
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>505
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>543
 ++Analisadores
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:analisadores
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:analisadores
@@ -146,18 +146,12 @@ i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\re
 ++Microsoft.AspNetCore.Analyzers
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-++Microsoft.AspNetCore.App.Analyzers
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-++Microsoft.AspNetCore.App.CodeFixes
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
 ++Microsoft.AspNetCore.Components.Analyzers
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
 ++Microsoft.AspNetCore.Mvc.Analyzers
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
 ++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
@@ -165,14 +159,10 @@ i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\program files\dotnet\sdk\6.0.104\sdk
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
 ++Microsoft.EntityFrameworkCore.Analyzers
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.0\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.17\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.17\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
 ++Microsoft.Extensions.Logging.Generators
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.4\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-++Microsoft.NET.Sdk.Razor.SourceGenerators
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\sdk\6.0.104\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-++System.Text.Json.SourceGeneration
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.4\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.1\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
 ++Microsoft.AspNetCore.App
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\microsoft.aspnetcore.app
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\microsoft.aspnetcore.app
@@ -180,21 +170,18 @@ i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\re
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\microsoft.netcore.app
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\microsoft.netcore.app
 ++AutoMapper (11.0.1)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>593
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>566
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>561
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>596
 ++AutoMapper.Extensions.Microsoft.DependencyInjection (11.0.0)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>590
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>559
-++Microsoft.EntityFrameworkCore (6.0.0)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>589
-++Microsoft.EntityFrameworkCore.Proxies (6.0.0)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>592
-++Microsoft.EntityFrameworkCore.Tools (6.0.0)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>595
-++Npgsql.EntityFrameworkCore.PostgreSQL (6.0.0)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>594
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>557
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>589
+++Microsoft.AspNetCore.Authorization (6.0.5)
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>559
+++Microsoft.EntityFrameworkCore (5.0.17)
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>638
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>588
 ++Swashbuckle.AspNetCore (6.2.3)
-i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>591
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>558
 ++ApplicationContext.cs
 i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\data\context\applicationcontext.cs
 ++CinemaDTO.cs
@@ -219,36 +206,21 @@ i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\re
 i:{00000000-0000-0000-0000-000000000000}:UsuariosApi
 ++Controller
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\controller\
+++Repositorios
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\repositorios\
+++Requests
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\
+++Startup.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\startup.cs
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:c:\users\danielrodriguescarva\source\repos\filmesapi\filmesapi\startup.cs
+++Resources.resx
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\properties\resources.resx
 ++CadastroController.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\controller\cadastrocontroller.cs
 ++LoginController.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\controller\logincontroller.cs
 ++LogoutController.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\controller\logoutcontroller.cs
-++Token.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\models\token.cs
-++Usuario.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\models\usuario.cs
-++Repositorios
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\repositorios\
-++Requests
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\
-++AtivaContaRequest.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\ativacontarequest.cs
-++LoginRequest.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\loginrequest.cs
-++EmailService.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\emailservice.cs
-++LoginService.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\loginservice.cs
-++LogoutService.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\logoutservice.cs
-++TokenService.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\tokenservice.cs
-++UsuarioService.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\usuarioservice.cs
-++Startup.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\startup.cs
 ++Dto
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\data\dto\
 ++IEmailService.cs
@@ -264,37 +236,60 @@ i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\re
 ++IUsuarioService.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\interfaces\iusuarioservice.cs
 ++20220527132308_identity.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220527132308_identity.cs
 ++UsuarioDbContextModelSnapshot.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\usuariodbcontextmodelsnapshot.cs
+++Token.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\models\token.cs
+++Usuario.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\models\usuario.cs
 ++UsuarioProfile.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\profiles\usuarioprofile.cs
 ++UsuarioRepository.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\repositorios\usuariorepository.cs
+++AtivaContaRequest.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\ativacontarequest.cs
+++EfetuaResetRequest.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\efetuaresetrequest.cs
+++LoginRequest.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\loginrequest.cs
+++ResetSenhaRequest.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\requests\resetsenharequest.cs
+++EmailService.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\emailservice.cs
+++LoginService.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\loginservice.cs
+++LogoutService.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\logoutservice.cs
+++TokenService.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\tokenservice.cs
+++UsuarioService.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\services\usuarioservice.cs
 ++FluentResults (3.5.0)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>567
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>597
 ++MailKit (3.1.1)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>570
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>600
 ++Microsoft.AspNetCore.Identity (2.2.0)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>563
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>593
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1306
 ++Microsoft.AspNetCore.Identity.EntityFrameworkCore (5.0.17)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>565
-++Microsoft.EntityFrameworkCore (5.0.17)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>558
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>595
 ++Microsoft.EntityFrameworkCore.Design (5.0.17)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>560
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>590
 ++Microsoft.EntityFrameworkCore.Proxies (5.0.17)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>564
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>594
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1442
 ++Microsoft.Extensions.Identity.Stores (5.0.17)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>571
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>601
 ++MimeKit (3.1.1)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>569
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>599
 ++Npgsql.EntityFrameworkCore.PostgreSQL (5.0.10)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>568
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>637
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1171
 ++Swashbuckle.AspNetCore (5.6.3)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>562
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>592
 ++System.IdentityModel.Tokens.Jwt (5.6.0)
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>561
+++Resources.Designer.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\properties\resources.designer.cs
 ++UsuarioDbContext.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\data\context\usuariodbcontext.cs
 ++Mensagem.cs
@@ -302,12 +297,43 @@ i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\re
 ++UsuarioDTO.cs
 i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\data\dto\usuariodto.cs
 ++20220527132308_identity.Designer.cs
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220527132308_identity.designer.cs
 ++Banco de Dados do SQL Server
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>792
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>900
 ++Foi detectada a dependência de Banco de Dados do SQL Server
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>793
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>901
 ++Plataforma de identidade Microsoft
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>790
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>898
 ++Foi detectada a dependência de Plataforma de identidade Microsoft
-i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>791
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>899
+++Secrets.json (Local)
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>902
+++Foi detectada a dependência de Secrets.json (Local)
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>903
+++Microsoft.EntityFrameworkCore.Relational (5.0.17)
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1170
+++System.IdentityModel.Tokens.Jwt (6.7.1)
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>1443
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1444
+++Microsoft.AspNetCore.Authentication.JwtBearer (5.0.17)
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:>1445
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1446
+++Microsoft.Extensions.Hosting (5.0.0)
+i:{da2f13ad-79f2-4b72-b2dc-4d276f67ca59}:>1447
+++20220602142045_user and admin.cs
+++20220602142045_user and admin.Designer.cs
+++20220602145856_first.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602145856_first.cs
+++20220602145856_first.Designer.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602145856_first.designer.cs
+++20220602171652_regular role.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602171652_regular role.cs
+++20220602171652_regular role.Designer.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602171652_regular role.designer.cs
+++20220602185713_roles.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602185713_roles.cs
+++20220602185713_roles.Designer.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602185713_roles.designer.cs
+++20220602190658_regular_admin.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602190658_regular_admin.cs
+++20220602190658_regular_admin.Designer.cs
+i:{1df0ddd2-4b3c-4303-a9f0-17e5265e96c6}:c:\users\danielrodriguescarva\source\repos\filmesapi\usuariosapi\migrations\20220602190658_regular_admin.designer.cs

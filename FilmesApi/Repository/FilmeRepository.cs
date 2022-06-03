@@ -2,6 +2,9 @@
 using FilmesApi.Interfaces;
 using FilmesApi.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Repositorios
 {
@@ -39,7 +42,7 @@ namespace FilmesApi.Repositorios
             return result;
         }
 
-        public async Task<IEnumerable<Filme>> GetAll()
+        public async Task<List<Filme>> GetAll()
         {
             var filmes = await _context.filmes.ToListAsync();
             return filmes;

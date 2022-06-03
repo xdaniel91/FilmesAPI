@@ -1,20 +1,21 @@
 ﻿using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using UsuariosApi.Models;
 
 namespace UsuariosApi.Interfaces
 {
     public interface IUsuarioRepository
     {
-        public Task<Result> CreateAsync(IdentityUser<int> identityUser, string senha);
+        public Task<Result> CreateAsync(ApplicationUser identityUser, string senha);
 
-        public Task<string> GerarTokenConfirmacaoEmail(IdentityUser<int> identityUser);
+        public Task<string> GerarTokenConfirmacaoEmail(ApplicationUser identityUser);
 
-        public Task<IdentityUser<int>> GetUser(int id);
+        public Task<ApplicationUser> GetUser(int id);
 
-        public IdentityResult ConfirmEmail(IdentityUser<int> user, string codigoAtivacao);
+        public IdentityResult ConfirmEmail(ApplicationUser user, string codigoAtivacao);
 
-        public Task<IdentityUser<int>> GetAny();
-        public Task<IdentityUser<int>>GetByEmail(string email);
+        public Task<ApplicationUser> GetAny();
+        public Task<ApplicationUser>GetByEmail(string email);
     }
 }

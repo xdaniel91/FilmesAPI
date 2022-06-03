@@ -36,3 +36,13 @@ C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\obj\Debug\net6.0\
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\obj\Debug\net6.0\FilmesApi.pdb
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\obj\Debug\net6.0\FilmesApi.genruntimeconfig.cache
 C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\obj\Debug\net6.0\FilmesApi.csproj.AssemblyReference.cache
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\DanielRodriguesCarva\source\repos\FilmesApi\FilmesApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
