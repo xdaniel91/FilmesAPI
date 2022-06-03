@@ -4,15 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using UsuariosApi.Interfaces;
+using UsuariosApi.Models;
 using UsuariosApi.Requests;
 
 namespace UsuariosApi.Services
 {
     public class LoginService : ILoginService
     {
-        private readonly SignInManager<IdentityUser<int>> _signManager;
+        private readonly SignInManager<ApplicationUser> _signManager;
         private readonly ITokenService _tokenService;
-        public LoginService(SignInManager<IdentityUser<int>> signManager, ITokenService tokenService)
+        public LoginService(SignInManager<ApplicationUser> signManager, ITokenService tokenService)
         {
             _signManager = signManager;
             _tokenService = tokenService;
@@ -20,8 +21,9 @@ namespace UsuariosApi.Services
 
         public async Task<Result> LoginUsuarioAsync(LoginRequest request)
         {
-            var result = await _signManager.PasswordSignInAsync(request.Username, request.Senha, false, false);
-            if (result.Succeeded)
+            var result = _signManager.PasswordSignInAsync(request.Username, request.Senha, false, false);
+
+            if (result.Result.Succeeded)
             {
                 var identityUser = await _signManager
                     .UserManager
@@ -29,13 +31,10 @@ namespace UsuariosApi.Services
                     .FirstOrDefaultAsync(
                     user => user.NormalizedUserName == request.Username.ToUpper());
 
-                var roles = await _signManager
-                    .UserManager
-                    .GetRolesAsync(identityUser);
+                var role = _signManager
+                                .UserManager.GetRolesAsync(identityUser).Result.FirstOrDefault();
 
-                var userRole = roles.FirstOrDefault();
-
-                var token = _tokenService.CreateToken(identityUser, userRole);
+                var token = _tokenService.CreateToken(identityUser, role);
 
                 return Result.Ok().WithSuccess(token.Value);
             }

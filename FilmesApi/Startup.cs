@@ -11,7 +11,8 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 using Microsoft.Extensions.Hosting;
-
+using FilmesApi.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 public class Startup
 {
@@ -24,6 +25,34 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddDbContext<FilmesApi.Data.FilmeContext.ApplicationContext>((DbContextOptionsBuilder options) => options
+                .UseLazyLoadingProxies()
+                .UseNpgsql(Configuration
+                .GetConnectionString("FilmeConnection")));
+
+        services.AddAuthentication(auth =>
+        {
+            auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
+                   .AddJwtBearer(token =>
+                   {
+                       token.RequireHttpsMetadata = false;
+                       token.SaveToken = true;
+                       token.TokenValidationParameters = new TokenValidationParameters
+                       {
+                           ValidateIssuerSigningKey = true,
+                           IssuerSigningKey = new SymmetricSecurityKey(
+                           Encoding.UTF8.GetBytes("clMAY6M6a7e3MDmW79RB")),
+                           ValidateIssuer = false,
+                           ValidateAudience = false,
+                           ClockSkew = TimeSpan.Zero
+                       };
+                   });
+
+        services.AddAuthorization(options => options.AddPolicy("IdadeMinima", policy => policy.Requirements.Add(new IdadeMinimaRequirement(18))));
+        services.AddSingleton<IAuthorizationHandler, IdadeMinimaHandler>();
+
         services.AddScoped<IFilmeRepository, FilmeRepository>();
         services.AddScoped<IFilmeService, FilmeService>();
         services.AddScoped<ICinemaRepository, CinemaRepository>();
@@ -35,36 +64,13 @@ public class Startup
         services.AddScoped<ISessaoRepository, SessaoRepository>();
         services.AddScoped<ISessaoService, SessaoService>();
 
-
-
         services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-       // services.AddEndpointsApiExplorer();
+        // services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-        services.AddDbContext<FilmesApi.Data.FilmeContext.ApplicationContext>((DbContextOptionsBuilder options) => options
-        .UseLazyLoadingProxies()
-        .UseNpgsql(Configuration
-        .GetConnectionString("FilmeConnection")));
 
-        services.AddAuthentication(auth =>
-        {
-            auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        })
-        .AddJwtBearer(token =>
-        {
-            token.RequireHttpsMetadata = false;
-            token.SaveToken = true;
-            token.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes("0asdjas09djsa09djasdjsadajsd09asjd09sajcnzxn")),
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ClockSkew = TimeSpan.Zero
-            };
-        });
+
+
 
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     }
@@ -81,6 +87,7 @@ public class Startup
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>

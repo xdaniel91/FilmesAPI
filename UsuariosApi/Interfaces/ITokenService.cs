@@ -5,6 +5,6 @@ namespace UsuariosApi.Interfaces
 {
     public interface ITokenService
     {
-        public Token CreateToken(IdentityUser<int> identityUser, string role);
+        public Token CreateToken(ApplicationUser identityUser, string role);
     }
 }

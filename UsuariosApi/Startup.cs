@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using UsuariosApi.Data.Context;
 using UsuariosApi.Interfaces;
+using UsuariosApi.Models;
 using UsuariosApi.Repositorios;
 using UsuariosApi.Services;
 
@@ -27,12 +28,11 @@ namespace UsuariosApi
         {
             /* configuração do context */
             services.AddDbContext<UsuarioDbContext>(options => options
-            .UseLazyLoadingProxies()
             .UseNpgsql(Configuration
             .GetConnectionString("UsuarioConnection")));
 
             /* configuração do identity*/
-            services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(opt =>
+            services.AddIdentity<ApplicationUser, IdentityRole<int>>(opt =>
             {
                 opt.SignIn.RequireConfirmedEmail = true;
             })

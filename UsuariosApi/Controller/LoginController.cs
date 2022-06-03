@@ -25,7 +25,7 @@ namespace UsuariosApi.Controller
         {
             var result = await _loginService.LoginUsuarioAsync(request);
             if (result.IsSuccess) return Ok(result.Successes[^1]);
-            return BadRequest(result);
+            return BadRequest(result.Errors[^1]);
         }
 
         [HttpPost("/solicita-reset")]

@@ -6,8 +6,6 @@ namespace FilmesApi.Data.DTO
 {
     public class FilmeDTO
     {
-        private readonly CultureInfo culture = CultureInfo.CurrentCulture;
-
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Diretor is required")]
@@ -23,12 +21,5 @@ namespace FilmesApi.Data.DTO
 
         public int Classificacao { get; set; }
 
-        public string HoraConsulta
-        {
-            get
-            {
-                return DateTime.Now.ToString(culture);
-            }
-        }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using FluentResults;
-using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Web;
 using UsuariosApi.Dto;
@@ -29,14 +28,14 @@ namespace UsuariosApi.Services
             var codigoAtivacao = request.CodigoAtivacao;
             var identityUser = await _usuarioRepository.GetUser(id);
             var identityResult = _usuarioRepository.ConfirmEmail(identityUser, codigoAtivacao);
-            if (identityResult.Succeeded) return Result.Ok();
+            if (identityResult.Succeeded) return Result.Ok().WithSuccess("conta ativada!");
             return Result.Fail("falha ao ativar conta de usuário");
         }
 
         public async Task<Result> CreateAsync(UsuarioDTO usuarioDto)
         {
             var usuario = _mapper.Map<Usuario>(usuarioDto);
-            var usuarioIdentity = _mapper.Map<IdentityUser<int>>(usuario);
+            var usuarioIdentity = _mapper.Map<ApplicationUser>(usuario);
             var senha = usuarioDto.Senha;
             var result = await _usuarioRepository.CreateAsync(usuarioIdentity, senha);
 

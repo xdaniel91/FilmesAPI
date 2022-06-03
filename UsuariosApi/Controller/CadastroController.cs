@@ -26,11 +26,11 @@ namespace UsuariosApi.Controller
         }
 
         [HttpGet("/ativacao")]
-        public IActionResult AtivarUsuario([FromQuery] AtivaContaRequest request)
+        public async Task<IActionResult> AtivarUsuarioAsync([FromQuery] AtivaContaRequest request)
         {
-            var result = _service.AtivarConta(request);
-            if (result.IsCompletedSuccessfully) return Ok();
-            return BadRequest();
+            var result = await _service.AtivarConta(request);
+            if (result.IsSuccess) return Ok(result.Successes[^1]);
+            return BadRequest(result.Errors[^1]);
         }
     }
 }

@@ -20,9 +20,9 @@ namespace FilmesApi.Controllers
             _filmeService = service;
             _mapper = mapper;
         }
-
-        [HttpPost]
+      
         [Authorize(Roles = "admin")]
+        [HttpPost]
         public async Task<IActionResult> AddAsync([FromBody] FilmeDTO filmeDto)
         {
             var filme = _mapper.Map<Filme>(filmeDto);
@@ -30,12 +30,13 @@ namespace FilmesApi.Controllers
             return Ok(filme);
         }
 
+        [Authorize(Roles = "admin, regular", Policy = "IdadeMinima")]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] int? classificacao = null)
         {
             if (classificacao == null)
             {
-                var filmes =  _filmeService.GetAllAsync();
+                var filmes = await _filmeService.GetAllAsync();
                 return Ok(filmes);
             }
             var filmesClassificacao = await _filmeService.GeyByClassificacao(classificacao);
@@ -43,6 +44,7 @@ namespace FilmesApi.Controllers
             return NotFound();
         }
 
+        [Authorize(Roles = "admin, regular")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -51,6 +53,7 @@ namespace FilmesApi.Controllers
             return NotFound();
         }
 
+        [Authorize(Roles = "admin, regular")]
         [HttpPatch("{id}")]
         public IActionResult Update(int id, [FromBody] FilmeDTO filmeDto)
         {
@@ -60,6 +63,7 @@ namespace FilmesApi.Controllers
             return Ok(filme);
         }
 
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
